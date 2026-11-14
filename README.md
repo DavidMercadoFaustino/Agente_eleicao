@@ -119,38 +119,6 @@ flowchart LR
   tokens) e `text-embedding-bge-m3`
 - Os dados do TSE e a legislação: veja [`dados/LEIA-ME.md`](dados/LEIA-ME.md)
 
-### Windows (scripts prontos)
-
-| Passo | Script | O que faz |
-|---|---|---|
-| 0 | `0_instalar_ambiente.bat` | cria o `.venv`, instala as dependências e confere o ambiente |
-| 1 | `1_carregar_dados.bat` | ETL dos zips do TSE para o DuckDB |
-| 2 | `2_validar_calculadora.bat` | testes + recálculo comparado com o resultado oficial |
-| 3 | `3_comparar_embeddings.bat` | indexa a legislação e compara nomic × bge-m3 |
-| 4 | `4_testar_ferramentas.bat` | demonstra cada ferramenta sem LLM |
-| 5 | `5_conversar.bat` | chat no terminal |
-| 6 | `6_avaliar.bat` | avaliação com log próprio (14 perguntas) |
-| 7 | `7_interface.bat` | interface Streamlit |
-| 8 | `8_avaliar_langsmith.bat` | avaliação no LangSmith |
-
-### Linux / macOS
-
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.exemplo .env          # ajuste o endereço do LM Studio e, se quiser, a chave do LangSmith
-python etl.py                 # carrega os dados
-python db.py                  # valida a calculadora contra o TSE
-python rag.py --comparar      # indexa a legislação
-python agente.py              # chat no terminal
-streamlit run app.py          # interface
-python avaliacao_langsmith.py # avaliação (precisa de LANGSMITH_API_KEY)
-```
-
-O notebook [`projeto_agente_eleitoral.ipynb`](projeto_agente_eleitoral.ipynb) percorre o projeto fase a fase:
-dados e calculadora → LLM isolado → chains (parser, LCEL × `@chain`, roteamento, paralelismo) → ferramentas →
-RAG → memória → verificação → avaliação → interface.
-
 ### Testes
 
 ```bash
