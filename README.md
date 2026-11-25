@@ -10,7 +10,7 @@ oficiais do TSE, o cálculo exato do sistema proporcional e a legislação eleit
 ![LM Studio](https://img.shields.io/badge/LLM-local%20(LM%20Studio)-6B46C1)
 ![Testes](https://img.shields.io/badge/testes-56%20passando-2EA44F)
 
-> Projeto da disciplina **Agentes Cognitivos com LangChain** (Mestrado, Infnet).
+> Projeto da disciplina **Agentes Cognitivos com LangChain** (Pós-gaduação, Infnet).
 
 ---
 
