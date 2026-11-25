@@ -1,0 +1,54 @@
+inputs.id,inputs.contexto,inputs.pergunta,outputs.resposta,outputs.ferramentas,outputs.verificacao_ok,outputs.revisada,outputs.segundos,error,reference.fatos,reference.nenhuma,reference.categoria,reference.proibidos,reference.ferramentas,feedback.fatos,feedback.trajetoria_superset,feedback.trajetoria_precisao,feedback.verificacao,execution_time,example_id,id
+12,[],Qual o custo por voto do Lucas Pavanato?,"Não há informações disponíveis sobre o custo por voto do Lucas Pavanato, pois os dados de prestação de contas ainda não foram carregados no banco.",['analisar_financas'],True,False,51.8,,['nao (foram|estao|esta)|ainda nao|indisponi|nao e possivel'],False,finanças,['r\\$ ?\\d'],[['analisar_financas']],1,1,1.0,1,51.782624,31b62ed7-eb52-4f14-8b81-b95a6082a3d5,01a1d606-63cb-7d19-a87b-bfb2955d9a70
+2,[],Quais os 5 mais votados no município de Luís Eduardo Magalhães?,"1. OZIEL OLIVEIRA (PSD) — 11.615 votos  
+2. DITINHO AVIVIP (FEDERAÇÃO UNIÃO PROGRESSISTA) — 9.310 votos  
+3. ZITO BARBOSA (FEDERAÇÃO UNIÃO PROGRESSISTA) — 5.660 votos  
+4. ROGÉRIO FAEDO (PL) — 3.671 votos  
+5. DOUTORA RAISSA SOARES (PL) — 2.944 votos",['votos_por_municipio'],True,False,67.2,,"['oziel oliveira', '11\\.615']",False,dados (município),[],"[['votos_por_municipio', 'consultar_banco']]",1,1,1.0,1,67.291259,386ae8ed-e834-4b57-b481-75911d47b4d8,01a1d607-2e6a-7076-b278-7f354fd21d07
+1,[],Quais foram os 3 candidatos a deputado federal mais votados em SP?,"1. LUCAS PAVANATO (PL) — 3.038.438 votos  
+2. ERIKA HILTON (FEDERAÇÃO PSOL REDE) — 1.596.472 votos  
+3. SÂMIA BOMFIM (FEDERAÇÃO PSOL REDE) — 583.107 votos",['mais_votados_uf'],True,False,52.3,,"['pavanato', 'erika hilton', 'samia bomfim']",False,dados (SQL),[],"[['mais_votados_uf', 'consultar_banco']]",1,1,1.0,1,52.315266,5458f5df-6200-4cbf-9ad9-cfe465c8a92c,01a1d608-3546-72a8-9b45-affa28b22627
+3,[],Quem foi o último eleito do PL em São Paulo?,"O último eleito do PL em São Paulo foi GIL DINIZ (PL) com 63.398 votos, eleito por quociente partidário (QP).",['eleitos_agremiacao'],True,False,35.7,,"['gil diniz', '63\\.398']",False,dados (agremiação),[],"[['eleitos_agremiacao', 'consultar_banco']]",1,1,1.0,1,35.710054,795e1f77-0214-4fa2-b8b3-049fed555bf7,01a1d609-01a5-7a2a-a912-d4da7c65044c
+4,[],Qual foi o quociente eleitoral de deputado federal em SP?,"O quociente eleitoral (QE) para a eleição de Deputado Federal em São Paulo (SP) foi de **338.203 votos**. 
+
+Base legal: [Código Eleitoral, art. 108].",['resultado_eleicao'],True,False,38.1,,['338\\.203'],False,cálculo,[],"[['resultado_eleicao', 'explicar_candidato', 'consultar_banco']]",1,1,1.0,1,38.085999,81225f30-f004-4241-84a7-f14ea642d349,01a1d609-8d24-7f97-938f-6058fc41d742
+7,[],Quantas cadeiras os votos do Lucas Pavanato renderam sozinhos?,"Os votos de Lucas Pavanato renderam sozinhos **8,98 quocientes eleitorais**, correspondendo a **8 cadeiras** no cálculo do quociente partidário.
+
+Base legal: [Código Eleitoral, art. 106 a 108].",['explicar_candidato'],True,True,78.3,,"['8,98', '\\b8\\b']",False,explicação,"['nenhuma cadeira', '19 cadeiras sozinho']",[['explicar_candidato']],1,1,1.0,1,78.339385,900e68af-3ae6-4a76-bae4-6e11bc3c75f8,01a1d60a-21ee-73f8-8087-3cb7b4253e23
+8,[],Por que a Federação PSOL REDE ficou com menos cadeiras que o seu quociente partidário em SP?,"A Federação PSOL REDE ficou com menos cadeiras que o seu quociente partidário em São Paulo porque apenas **6 candidatos** da agremiação atingiram a votação mínima de **10% do QE (33.820 votos)** exigida para ocupar vagas de quociente partidário. As 3 vagas restantes foram preenchidas por candidatos eleitos pelas sobras, conforme o Código Eleitoral, art. 108.
+
+Base legal: [Código Eleitoral, art. 108].",['resultado_eleicao'],True,False,60.0,,"['\\b6\\b', '\\b9\\b', '10 ?%']",False,explicação,[],"[['resultado_eleicao', 'explicar_candidato', 'eleitos_agremiacao', 'consultar_banco']]",0,1,1.0,1,59.980614,9fc647f2-7637-4d84-a74c-682958d047d9,01a1d60b-53ff-78eb-b813-1d4a75480d49
+6,[],Por que o Rui Falcão não foi eleito em SP?,"Rui Falcão não foi eleito porque a agremiação conquistou 11 cadeiras e a candidatura ficou em 12º lugar na lista interna; as cadeiras vão aos mais votados da agremiação, e o último eleito dela (João Paulo Cunha) teve 109.548 votos.
+
+DADOS:
+- Votos nominais válidos: 106.443.
+- Quociente eleitoral (QE) de SP: 338.203.
+- Agremiação: 2.843.542 votos válidos = 8,41 QE -> QP 8; cadeiras no total (QP + sobras): 11.
+- Votação individual = 31,5% do QE.
+
+Base legal: [Código Eleitoral, art. 106 a 108]; [Código Eleitoral, art. 109, § 1º]; [Res.-TSE 23.677/2021, art. 11, § 8º].",['explicar_candidato'],True,False,125.0,,"['\\b11\\b', '12', '109\\.548']",False,explicação,[],[['explicar_candidato']],1,1,1.0,1,125.027409,ad9a2820-1eae-4141-974a-2ab2a05d6eba,01a1d60c-3e4c-7544-b443-d589d3d81409
+14,['Por que o Rui Falcão não foi eleito em SP?'],E quem ficou com a última vaga da federação dele?,"A última vaga da federação de Rui Falcão foi conquistada por **João Paulo Cunha** (PT), que teve **109.548 votos** e foi eleito por média.
+
+Os primeiros suplentes da agremiação são:
+- Rui Falcão (PT) — 106.443 votos
+- Paulo Teixeira (PT) — 106.062 votos
+- Reis (PT) — 90.224 votos",['eleitos_agremiacao'],True,False,77.7,,['joao paulo cunha'],False,memória (2 turnos),[],"[['explicar_candidato', 'eleitos_agremiacao', 'consultar_banco']]",1,1,1.0,1,201.184688,b45da168-003d-45c8-88aa-9b571cc97f29,01a1d60e-26b3-7cc7-a7da-0cecf892a40a
+11,[],Qual o critério de desempate quando dois partidos têm a mesma média nas sobras?,"Quando dois ou mais partidos têm a mesma média nas sobras, o critério de desempate é determinado pela **maior votação nominal** recebida pelos candidatos que disputam as vagas. Caso haja empate também nesse critério, prevalece o **número de votos nominais** obtidos por cada candidato.
+
+Base legal: [Res.-TSE 23.677/2021, art. 11, § 7º] e [Código Eleitoral (Lei 4.737/1965), art. 109].",['buscar_legislacao'],True,False,160.2,,"['(partido|federac|agremiac)[^.]{0,40}maior votacao|maior votacao[^.]{0,30}(partido|federac|agremiac)']",False,legislação,[],"[['buscar_legislacao', 'ler_artigo']]",0,1,1.0,1,160.230669,bb43cb01-01b5-47df-b991-5fd432f37630,01a1d611-38a0-784a-a7e4-bbba03c1e45e
+10,[],O que diz o art. 108 do Código Eleitoral?,"O art. 108 do Código Eleitoral estabelece que estarão eleitos, entre os candidatos registrados por um partido que tenham obtido votos em número igual ou superior a 10% (dez por cento) do quociente eleitoral, tantos quantos o respectivo quociente partidário indicar, na ordem da votação nominal que cada um tenha recebido.
+
+[Código Eleitoral (Lei 4.737/1965), art. 108]",['ler_artigo'],True,False,84.9,,"['10 ?%', 'quociente eleitoral']",False,legislação,[],"[['ler_artigo', 'buscar_legislacao']]",1,1,1.0,1,84.866953,cbbe8cdb-b920-473d-b0bf-e008e6104470,01a1d613-aa96-7da2-857f-58e4fb0c4f51
+5,[],Quem foi o eleito menos votado na Bahia e por qual critério entrou?,"O eleito menos votado na Bahia foi **FELIX MENDONÇA** do PDT, com **60.159 votos**, e foi eleito por meio das sobras com a aplicação do critério de **80/20**.
+
+Base legal: [Lei das Eleições (Lei 9.504/1997), art. 80].","['resultado_eleicao', 'buscar_legislacao']",True,True,144.7,,"['felix mendonca', '60\\.159', 'sobra|media']",False,cálculo,['quociente partidario \\(qp\\)\\b.*felix'],"[['resultado_eleicao', 'consultar_banco', 'explicar_candidato']]",1,1,0.5,1,144.721019,ccb07f60-8f88-49e1-8287-aba6c4592cb5,01a1d614-f62d-7ce5-b094-c8c0ec4554f3
+9,[],O que acontece se nenhum partido atingir o quociente eleitoral?,"Se nenhum partido atingir o quociente eleitoral, a distribuição das cadeiras será feita de acordo com as seguintes regras:
+
+1. **Primeira fase**: As cadeiras serão distribuídas entre os partidos e federações que tenham atingido 80% do quociente eleitoral e que possuam candidatos com pelo menos 20% do quociente eleitoral (cláusula de barreira 80/20). [Res.-TSE 23.677/2021, art. 12-A]
+
+2. **Segunda fase**: As cadeiras restantes serão distribuídas entre todos os partidos e federações que participaram da eleição, independentemente de atingirem a cláusula de barreira 80/20. [Res.-TSE 23.677/2021, art. 12-A]
+
+3. **Cálculo por média**: A distribuição será feita com base nas maiores médias calculadas pela divisão dos votos válidos de cada partido ou federação pelo quociente partidário acrescido de 1 (um). [Res.-TSE 23.677/2021, art. 11]
+
+Essa regra foi estabelecida com base no Acórdão do STF na ADI 7.228 e está em consonância com o Código Eleitoral (art. 109). [Código Eleitoral (Lei 4.737/1965), art. 111]",['buscar_legislacao'],True,False,265.0,,"['12-?a|111', 'media']",False,legislação,[],"[['buscar_legislacao', 'ler_artigo']]",1,1,1.0,1,265.038302,ce2eaa29-0146-479c-857a-44c30d078760,01a1d617-2b91-7c14-adfa-ebb953d12a68
+13,[],Quem foi o deputado federal mais votado no Rio de Janeiro?,"Não cubro essa eleição: trabalho apenas com DEPUTADO FEDERAL 2026 em SÃO PAULO (SP, 70 vagas) e na BAHIA (BA, 39 vagas).",[],True,False,30.2,,['nao (cubro|cobre|abrange|tenho|possuo)|apenas|somente|so (sp|sao paulo)'],True,fora de escopo,[],[],1,1,1.0,1,30.245534,ce8a07b3-175a-4757-a11a-01c202e353e8,01a1d61b-36fb-7578-9e56-6c8d620d2dc3
